@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+<h4>Reminders</h4>
+
+{% if currReminders %}
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Task</th>
+            <th>Date and Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in currReminders %}
+            <tr>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.task }}</td>
+                <td>{{ entry.dateNtime }}</td>
+                <td><a href="editReminder/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteReminder/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+<br> <br>
+<a href="addReminder">Add a reminder</a>
+
+<br> <br> <br>
+<h4>Old Reminders</h4>
+
+{% if oldReminders %}
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Task</th>
+            <th>Date and Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in oldReminders %}
+            <tr>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.task }}</td>
+                <td>{{ entry.dateNtime }}</td>
+                <td><a href="editReminder/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteReminder/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}
