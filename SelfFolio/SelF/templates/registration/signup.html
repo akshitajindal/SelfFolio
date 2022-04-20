@@ -1,5 +1,12 @@
+{% load static %}
 
     {% block content %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
   <!--  <style>
         body{
             background-image: linear-gradient(to right, turquoise , midnightblue);
@@ -25,8 +32,31 @@
             margin-bottom: 20px;
         }
     </style> -->
-    
+
+<style>
+    p {
+        text-align: left;
+    }
+</style>
+
+<body class="text-center">
+    <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo"
+                class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+              />
+            </div>
+    <div class="col-xl-6">
+    <div class="card-body p-md-5 text-black">
     <h1>Signup</h1>
+        <br>
     {% if messages %}
         {% for message in messages %}
             <h6 id="message">{{ message }}</h6>
@@ -81,55 +111,95 @@
 
     <form method="POST">
         {% csrf_token %}
+
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.username.label}}
         {{form.username}}
         </p>
+                    </div>
+                  </div>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.email.label}}
         {{form.email}}
         </p>
+                    </div>
+                  </div>
 
+        <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.first_name.label}}
         {{form.first_name}}
         </p>
+                    </div>
+                  </div>
 
+            <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.last_name.label}}
         {{form.last_name}}
         </p>
+            </div>
+            </div>
+
+        </div>
 
         <p>
             <label>Date of Birth </label>
         {{form.DOB}}
         </p>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
             {{form.Bio.label}}
             {{form.Bio}}
         </p>
+                    </div>
+                  </div>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.University.label}}
         {{form.University}}
         </p>
+                    </div>
+                  </div>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.Profession.label}}
         {{form.Profession}}
         </p>
+                    </div>
+                  </div>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.password1.label}}
         {{form.password1}}
         </p>
+                    </div>
+                  </div>
 
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
         <p>
         {{form.password2.label}}
         {{form.password2}}
         </p>
+                    </div>
+                  </div>
 
         <button type="submit">Submit</button>
 
@@ -141,6 +211,14 @@
     {{form.errors}}
     </p>
 
+    </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
 
     
     {% endblock %}
